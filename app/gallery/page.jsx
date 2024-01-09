@@ -1,5 +1,12 @@
 import styles from './gallery.module.scss';
 
+export const generateMetadata = () => {
+	return {
+		title: 'Gallery Page',
+		description: "ABC Company's Gallery",
+	};
+};
+
 export default function Gallery() {
 	return (
 		<main className={styles.gallery}>
