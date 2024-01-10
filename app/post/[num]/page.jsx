@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function PostDetail({ params }) {
 	const { num } = useParams();
-	const [Post, setPost] = useState(0);
+	const [Post, setPost] = useState(null);
 
 	useEffect(() => {
 		const fetchPostById = async (url) => {
