@@ -2,10 +2,23 @@ import Header from '@/components/header/header';
 import './styles/globals.scss';
 import { Roboto } from 'next/font/google'; // 일반 구글서버에서 가져온 폰트는 최적화가 되어있지 않아 같은 폰트임에도 용량차이가 있음
 
+/* 
+	외부폰트 적용시 display 옵션별 기능 설명 https://nextjs.org/docs/app/api-reference/components/font#display
+	auto: 사용하는 브라우저의 user agent 설정값에 따라 자동으로 외부폰트 적용설정을 사용
+	block: 적은 대기시간 설정 후 외부폰트가 적용될때까지 계속 시도
+	swap:  block보다 대기시간을 더 짧게 설정, 외부폰트 적용될때까지 계속 시도
+	fallback: 대기시간도 짧게, 폰트적용 시도도 짧게 처리해서 외부폰트 미적용시 바로 대체 시스템폰트 적용 
+	optional: 대기시간을 짧게 설정, 외부폰트 시도 무시
+
+	block period: 외부폰트가 import 되기 전까지 아무것도 보이지 않고 대체폰트가 적용된 상태
+	font swaip period: 외부폰트를 적용하려고 시도하는 상태
+	fallure period: 외부폰트 적용에 실패한 상태
+*/
 const roboto = Roboto({
 	weight: '400',
 	subsets: ['latin'],
 	display: 'swap', // 서버에서 웹폰트를 가져오기 전까지 기본 폰트를 쓰겠다는 것(swap해서)
+	preload: true, // supsets가 지정되어 있을 시 프리로드 기능 사용. true시 루트레이아웃에 적용하면 전역에 걸쳐 preload.
 });
 
 export const metadata = {
