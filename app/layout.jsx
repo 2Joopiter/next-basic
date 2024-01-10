@@ -1,5 +1,12 @@
 import Header from '@/components/header/header';
 import './styles/globals.scss';
+import { Roboto } from 'next/font/google'; // 일반 구글서버에서 가져온 폰트는 최적화가 되어있지 않아 같은 폰트임에도 용량차이가 있음
+
+const roboto = Roboto({
+	weight: '400',
+	subsets: ['latin'],
+	display: 'swap', // 서버에서 웹폰트를 가져오기 전까지 기본 폰트를 쓰겠다는 것(swap해서)
+});
 
 export const metadata = {
 	title: '메인페이지',
@@ -11,6 +18,8 @@ export default function RootLayout({ children }) {
 		<html lang='en'>
 			<body>
 				<Header />
+				<h1>No Google Font</h1>
+				<h1 className={roboto.className}>Google Font</h1>
 				{children}
 			</body>
 		</html>
