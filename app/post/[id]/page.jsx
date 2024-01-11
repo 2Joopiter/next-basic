@@ -13,5 +13,7 @@ export default function PostDetail({ params }) {
 			});
 	}, [id]);
 
-	return <div></div>;
+	return <div>
+		
+	</div>;
 }

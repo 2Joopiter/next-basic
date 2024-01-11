@@ -1,10 +1,6 @@
-import clsx from 'clsx';
+import MainPage from './(main)/page';
 import styles from './main.module.scss';
 
 export default function Home() {
-	return (
-		<main className={styles.main}>
-			<h1>Main Page</h1>
-		</main>
-	);
+	return <MainPage />;
 }

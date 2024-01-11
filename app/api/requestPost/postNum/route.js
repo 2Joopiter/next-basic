@@ -1,7 +1,7 @@
-import { postDB } from '@/app/DB/postData';
+import { postDB } from '@/DB/postData';
 import { NextResponse } from 'next/server';
 
 export async function GET(req, res) {
-	const { PostNum } = await req.params;
-	return NextResponse.json({ result: postDB[parseInt(PostNum)] });
+	const { postNum } = res.params;
+	return NextResponse.json({ result: postDB[parseInt(postNum)] });
 }
