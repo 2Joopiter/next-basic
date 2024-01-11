@@ -1,4 +1,7 @@
 'use client';
+
+import clsx from 'clsx';
+import styles from './post.module.scss';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
@@ -12,8 +15,13 @@ export default function Post() {
 	}, []);
 
 	return (
-		<section className='postList'>
+		<section className={clsx(styles.post)}>
 			<h1>Post List</h1>
+			<nav>
+				<button>
+					<Link href='/post/write'>Write Post</Link>
+				</button>
+			</nav>
 			{Post.map((post) => {
 				return (
 					<article key={post.id}>
