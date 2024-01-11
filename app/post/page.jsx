@@ -12,16 +12,17 @@ export default function Post() {
 	}, []);
 
 	return (
-		<div className='postList'>
+		<section className='postList'>
+			<h1>Post List</h1>
 			{Post.map((post) => {
 				return (
-					<article key={post.name}>
+					<article key={post.id}>
 						<h2>
-							<Link href={`/post/${post.id}`}>{post.name}</Link>
+							<Link href={`/post/${post.id}`}>{post.title}</Link>
 						</h2>
 					</article>
 				);
 			})}
-		</div>
+		</section>
 	);
 }

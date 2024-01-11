@@ -1,9 +1,18 @@
 .header {
-	ul {
-		li {
-			a.on {
-				color: hotpink;
-			}
-		}
+	width: 100%;
+	padding: 30px 10vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	background: #333;
+
+	* {
+		color: inherit;
+	}
+
+	nav {
+		display: flex;
+		gap: 40px;
 	}
 }
