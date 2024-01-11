@@ -2,8 +2,10 @@
 import { useState } from 'react';
 import styles from './write.module.scss';
 import clsx from 'clsx';
+import { useRouter } from 'next/navigation';
 
 export default function Write() {
+	const router = useRouter();
 	const [Post, setPost] = useState({ title: '', content: '' });
 
 	const handleChange = (e) => {
@@ -24,6 +26,7 @@ export default function Write() {
 				response.json().then((data) => {
 					console.log(data);
 					alert('글 저장에 성공했습니다.');
+					router.push('/post'); // 글 저장 이후 post 화면(목록)으로 이동
 				});
 				// 응답 실패시
 			} else {
