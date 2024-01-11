@@ -14,16 +14,6 @@ export default function Header() {
 					</Link>
 				</li>
 				<li>
-					<Link href='/about' className={pathname === '/about' ? styles.on : ''}>
-						About
-					</Link>
-				</li>
-				<li>
-					<Link href='/gallery' className={pathname === '/gallery' ? styles.on : ''}>
-						Gallery
-					</Link>
-				</li>
-				<li>
 					<Link href='/post' className={pathname === '/post' ? styles.on : ''}>
 						Post
 					</Link>
