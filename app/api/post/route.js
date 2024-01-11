@@ -4,7 +4,12 @@
 
 import { NextResponse } from 'next/server';
 
-export function GET() {
-	return NextResponse.json({data: '클라이언트 요청에 대한 Post 응답'})
-}
+const posts = [
+	{ name: 'david', age: 20 },
+	{ name: 'Emily', age: 22 },
+	{ name: 'michael', age: 30 },
+];
 
+export function GET() {
+	return NextResponse.json({ result: posts });
+}
