@@ -1,4 +1,4 @@
-import { postDB } from '@/DB/postData';
+import { postDB } from '@/app/DB/postData';
 import { NextResponse } from 'next/server';
 
 export function GET(req, res) {
